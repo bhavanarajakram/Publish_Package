@@ -1,8 +1,13 @@
 {
   "name": "redux-app",
+  "publishConfig": {
+    "registry":  "https://npm.pkg.github.com/redux-app"
+
+  },
   "version": "0.1.0",
   "private": false,
   "dependencies": {
+    "@babel/cli": "^7.20.7",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -15,7 +20,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "rm -rf dist && babel src/lib --out-dir dist --copy-files",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
